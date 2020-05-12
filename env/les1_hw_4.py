@@ -14,5 +14,6 @@ while number > 0:
     if a > max:
         max = a
     number = number // 10
-print('Самое большая цифра в числе ' + str(max))
+print(f'Самое большая цифра в числе {max}')
+
 
