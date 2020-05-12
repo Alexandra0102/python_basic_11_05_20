@@ -17,5 +17,3 @@ timeS = sec % 60
 time = f'Московское время: {timeH} : {timeM} : {timeS}'
 print(time)
 
-
-
