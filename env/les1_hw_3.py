@@ -9,7 +9,7 @@ while True:
     else:
         print('Неверный ввод, повторите, пожалуйста')
 
-if 1 >= number <= 9:  # что не так?
+if (1 <= number) and (number <= 9):
     summa = number * 1 + number * 11 + number * 111
     print(summa)
 else:
