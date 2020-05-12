@@ -5,3 +5,25 @@
 вычислите рентабельность выручки (соотношение прибыли к выручке). Далее запросите
 численность сотрудников фирмы и определите прибыль фирмы в расчете на одного сотрудника."""
 
+while True:
+    revenue = input('Введите выручку компании руб.\n')
+    if revenue.isdigit():
+        revenue = int(revenue)
+        break
+    else:
+        print('Неверный ввод. Повторите')
+while True:
+    lost = input('Введите затраты компании руб. \n')
+    if lost.isdigit():
+        lost = int(lost)
+        break
+    else:
+        print('Неверный ввод. Повторите')
+if revenue >= lost:
+    print('Ваша компания работает эффективно')
+    profit = revenue - lost
+    effectivness = profit / revenue * 100
+    print(f'Рентабельность компании {round(effectivness)} %')
+else:
+    print('Ваша компания отработала неэффективно')
+
