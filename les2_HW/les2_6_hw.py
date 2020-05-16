@@ -22,6 +22,7 @@ unit = input('Введите единицу измерения товара \n' 
 good_list = {good: [price, numbers, unit]}
 print(f'Название товара {good}, цена товара {price}, кол-во товара {numbers}, ед.изм {unit}')'''
 
+Goods = []
 good_list = {}
 number_good = Check('Введите кол-во товарных позиций \n')
 
@@ -31,14 +32,22 @@ for i in range(number_good):
     price = Check('Введите цену товара' + good)
     numbers = Check('Введите количество товара' + good)
     unit = input('Введите единицу измерения товара' + good)
-    good_list.update({good: [price, numbers, unit]})
-    goods_tuple = (good, price, numbers, unit)
-    print(goods_tuple)
-    print(f'Название товара {good}, цена товара {price}, кол-во товара {numbers}, ед.изм {unit}')
-print(good_list)
+    #good_list.update({good: [price, numbers, unit]})
+    good_list.update({'название товара': good,
+                      'цена': price,
+                      'количество': numbers,
+                      'ед': unit})
+    goods_tuple = (i, good_list)
+    #print(goods_tuple)
+    print(f'{i + 1}, Название товара: {good}, цена товара: {price}, кол-во товара: {numbers}, ед.изм: {unit}')
+    #print(good_list)
+    Goods.append(goods_tuple)
+    print(Goods)
+for i in range(good_list):
+    user_Input = input('Введите параметр товара')
+    print(good_list[user_Input])
 
-user_Input = input('Введите название искомого товара')
-print(good_list[user_Input])
+
 
 
 
