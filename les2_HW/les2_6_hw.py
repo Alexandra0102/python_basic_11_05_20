@@ -43,9 +43,10 @@ for i in range(number_good):
     #print(good_list)
     Goods.append(goods_tuple)
     print(Goods)
-for i in range(good_list):
-    user_Input = input('Введите параметр товара')
-    print(good_list[user_Input])
+
+user_Input = input('Введите параметр товара')
+print(good_list[user_Input])
+
 
 
 
