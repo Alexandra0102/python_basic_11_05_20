@@ -8,4 +8,4 @@ def my_func(a, b, c):
         return a + c
     elif c > a and b > a:
         return b + c
-print(my_func(4, 7, 9))
+print(my_func(4, 7, 10))
