@@ -17,3 +17,14 @@ def my_func_2(x, y, result=None):
         y += 1
     return result
 print('result:', my_func(2, -3))
+
+'''def my_func_3(x, y, result=1):
+    for i in range(y):
+        result *= x
+    return result
+print(my_func_3(2, 3))'''
+
+
+
+
+
