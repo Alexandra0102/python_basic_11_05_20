@@ -18,3 +18,4 @@ def generator():
         yield el
 print(fact(4))
 
+

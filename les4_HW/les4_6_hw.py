@@ -26,3 +26,4 @@ for el in cycle("САША"):
     print(el)
     с += 1
 
+
