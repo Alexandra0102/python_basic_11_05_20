@@ -11,7 +11,34 @@
 [{"firm_1": 5000, "firm_2": 3000, "firm_3": 1000}, {"average_profit": 2000}]
 Подсказка: использовать менеджер контекста.
 '''
-import os
-dir_path_root = os.path.dirname(__file__)
-print(dir_path_root)
 
+import json
+
+dict_list = []
+dict_list_2 = []
+dict = {}
+dict_1 = {}
+with open("les5_7_hw.txt", 'r', encoding='UTF-8') as file:
+    ave_profit = 0
+    count = 0
+    for line in file:
+
+        dict_list = line.split()
+        print(dict_list)
+
+        profit = int(dict_list[2]) - int(dict_list[3])
+        sales = int(dict_list[2])
+        name = dict_list[0]
+        dict.update({name: profit})
+        print(dict)
+
+        if profit >= 0:
+            ave_profit += profit
+            count += 1
+dict_1.update({'средняя прибыль': ave_profit / count})
+dict_list_2.append(dict)
+dict_list_2.append(dict_1)
+print(dict_list_2)
+
+with open("my_file.json", "w") as write_f:
+    json.dump(dict_list_2, write_f)
