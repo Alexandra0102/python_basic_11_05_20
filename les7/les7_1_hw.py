@@ -13,26 +13,24 @@ import math
 
 class Matrix():
     def __init__(self, *args):
-        pass
- #       self.__line = list(*args)
-
-    def __add__(self, other):
-        d = []
-        for i, g in zip(self, other):
-            d.append(i + g)
-            return Matrix(d)
+        self.__box = list(args)
 
     def __str__(self) -> str:
-        pass
-#       return str(self.__line)
+        return str(self.__box)
 
-a = Matrix([[31, 22, 0, 0], [37, 43, 0, 0], [51, 86, 0, 0]])
-b = Matrix([[3, 5, 32, 0], [2, 4, 6, 0], [-1, 64, -8, 0]])
-c = Matrix([[3, 5, 8, 3], [8, 3, 7, 1], [0, 0, 0, 0], [0, 0, 0, 0]])
+    def __add__(self, other):
+        result = map(sum, zip(self.__box, other.__box))
+        return Matrix(*result)
+#        d = []
+#        for i, g in zip(self, other):
+#            d.append(i + g)
+#            return Matrix(d)
+
+a = Matrix([31, 22, 0, 0], [37, 43, 0, 0], [51, 86, 0, 0])
+b = Matrix([3, 5, 32, 0], [2, 4, 6, 0], [-1, 64, -8, 0])
+c = Matrix([3, 5, 8, 3], [8, 3, 7, 1], [0, 0, 0, 0], [0, 0, 0, 0])
+
 print(a)
 print(b)
 print(c)
-print(a + b)
-#result = map(sum, zip([[31, 22, 0, 0], [37, 43, 0, 0], [51, 86, 0, 0]], [[3, 5, 32, 0], [2, 4, 6, 0], [-1, 64, -8, 0]]))
-#print([[31, 22, 0, 0], [37, 43, 0, 0], [51, 86, 0, 0]] + [[3, 5, 32, 0], [2, 4, 6, 0], [-1, 64, -8, 0]])
-#print(result)
+

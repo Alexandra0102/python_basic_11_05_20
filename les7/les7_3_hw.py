@@ -14,23 +14,31 @@
 import math
 
 class Cell():
-    def __init__(self, *args):
-        self.__numbers = args
+    def __init__(self, x, y):
+        self.x = list(x)
+        self.y = y
 
     def __add__(self, other):
-        return Cell(self.__numbers)
+        return Cell(self.x + other.x, self.y + other.y)
 
     def __sub__(self, other):
-        return Cell(self.__numbers)
+        return Cell(self.x - other.x, self.y - other.y)
 
     def __mul__(self, other):
-        return Cell(self.__numbers)
+        return Cell(self.x * other.x, self.y * other.y)
 
     def __truediv__(self, other):
-        return Cell(self.__numbers)
+        return Cell(self.x / other.x, self.y / other.y)
 
-c = Cell([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
-print(c)
-d = Cell([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
-print(c + d)
+    def __str__(self) -> str:
+        return f"Клетка с параметрами ({self.x}, {self.y})"
 
+#x = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
+#print(x)
+#y = (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+a = Cell([1, 2, 3, 4, 5, 6, 7, 8, 9], 2)
+b = Cell([1, 1, 1, 1, 1, 1, 1, 1], 1)
+print(a + b)
+print(a - b)
+print(a * b)
+print(a / b)
