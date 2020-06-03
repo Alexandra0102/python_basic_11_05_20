@@ -32,10 +32,15 @@ class Clothers(MyAbstract):
         b = (2 * self.H + 0.3)
         return b
 
+
+#   def __add__(self, other):
+#       return Clothers(self.coat + other.coat, self.suit + other.suit)
+
 c = Clothers(44, 172)
 
 print(round(c.material_coat, 2))
 print(c.material_suit())
+print(c.material_coat + c.material_suit())
 
 # метод без @property и абстракции
 
