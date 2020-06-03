@@ -41,6 +41,7 @@ print(c.material_coat)
 print(c.material_suit())
 
 # метод без @property и абстракции
+
 class Clothers():
     def __init__(self, coat, suit):
         self.V = float(coat)
