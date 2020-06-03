@@ -9,35 +9,32 @@
 
 from abc import ABC, abstractmethod
 
-
 class MyAbstract(ABC):
     @abstractmethod
-    def material_coat(self, coat: float) -> float:
+    def material_coat(self, coat: int) -> int:
         pass
 
     @abstractmethod
-    def material_suit(self, suit: float) -> float:
+    def material_suit(self, suit: int) -> int:
         pass
-
 
 class Clothers(MyAbstract):
     def __init__(self, coat, suit):
-        self.V = float(coat)
-        self.H = float(suit)
+        self.V = int(coat)
+        self.H = int(suit)
 
     @property
-    def material_coat(self, **kwargs) -> float:
+    def material_coat(self, **kwargs) -> int:
         a = self.V / 6.5 + 0.5
         return a
 
-
-    def material_suit(self, **kwargs) -> float:
+    def material_suit(self, **kwargs) -> int:
         b = (2 * self.H + 0.3)
         return b
 
-
 c = Clothers(44, 172)
-print(c.material_coat)
+
+print(round(c.material_coat, 2))
 print(c.material_suit())
 
 # метод без @property и абстракции
@@ -55,9 +52,8 @@ class Clothers():
         b = (2 * self.H + 0.3)
         return b
 
-
 c = Clothers(44, 172)
 a = c.material_coat()
 b = c.material_suit()
-print(a)
+print((round(a, 2)))
 print(b)
