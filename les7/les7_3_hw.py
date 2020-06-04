@@ -12,11 +12,13 @@
 '''
 
 import math
+import random
+from random import randint
 
 class Cell():
-    def __init__(self, x, y):
+    def __init__(self, x: int) -> int:
         self.x = list(x)
-        self.y = y
+ #       self.y = y
 
     def __add__(self, other):
         return Cell(self.x + other.x, self.y + other.y)
@@ -33,12 +35,12 @@ class Cell():
     def __str__(self) -> str:
         return f"Клетка с параметрами ({self.x}, {self.y})"
 
-#x = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
-#print(x)
-#y = (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
-a = Cell([1, 2, 3, 4, 5, 6, 7, 8, 9], 2)
-b = Cell([1, 1, 1, 1, 1, 1, 1, 1], 1)
-print(a + b)
-print(a - b)
-print(a * b)
-print(a / b)
+    def make_order(self, other):
+        x = 12
+        nCell = 5
+        result = '\n'.join(('*' * x)[i:i + nCell] for i in range(0, x, nCell))
+        return Cell(result)
+
+
+
+

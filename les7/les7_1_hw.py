@@ -10,27 +10,25 @@
 '''
 
 import math
+from itertools import starmap
 
-class Matrix():
-    def __init__(self, *args):
-        self.__box = list(args)
+class Matrix:
+    def __init__(self, matrix):
+        self.matrix = list(matrix)
 
     def __str__(self) -> str:
-        return str(self.__box)
+        return str(self.matrix)
 
     def __add__(self, other):
-        result = map(sum, zip(self.__box, other.__box))
-        return Matrix(*result)
-#        d = []
-#        for i, g in zip(self, other):
-#            d.append(i + g)
-#            return Matrix(d)
+        return Matrix(list(map(lambda x, y: list(map(lambda z, w: z + w, x, y)), self.matrix, other.matrix)))
 
-a = Matrix([31, 22, 0, 0], [37, 43, 0, 0], [51, 86, 0, 0])
-b = Matrix([3, 5, 32, 0], [2, 4, 6, 0], [-1, 64, -8, 0])
-c = Matrix([3, 5, 8, 3], [8, 3, 7, 1], [0, 0, 0, 0], [0, 0, 0, 0])
 
+a = Matrix([[31, 22, 0, 0], [37, 43, 0, 0], [51, 86, 0, 0]])
+b = Matrix([[3, 5, 32, 0], [2, 4, 6, 0], [-1, 64, -8, 0]])
+c = Matrix([[3, 5, 8, 3], [8, 3, 7, 1], [0, 0, 0, 0], [0, 0, 0, 0]])
+x = Matrix([a] + [b])
 print(a)
 print(b)
 print(c)
+print(x)
 

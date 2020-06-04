@@ -42,7 +42,7 @@ print(round(c.material_coat, 2))
 print(c.material_suit())
 print(c.material_coat + c.material_suit())
 
-# метод без @property и абстракции
+# метод без @property и абстракции :)
 
 class Clothers():
     def __init__(self, coat, suit):
