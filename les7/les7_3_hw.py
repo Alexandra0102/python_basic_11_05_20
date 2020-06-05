@@ -11,36 +11,41 @@
 Тогда метод make_order() вернет строку: *****\n*****\n*****..
 '''
 
-import math
-import random
-from random import randint
+class Cell:
+    def __init__(self, x):
+        self.x = int(x)
 
-class Cell():
-    def __init__(self, x: int) -> int:
-        self.x = list(x)
- #       self.y = y
+    def __str__(self):
+        return f'result is : {self.x * "*"}'
 
     def __add__(self, other):
-        return Cell(self.x + other.x, self.y + other.y)
+        return Cell(self.x + other.x)
 
     def __sub__(self, other):
-        return Cell(self.x - other.x, self.y - other.y)
+        return Cell(self.x - other.x) if (self.x - other.x) > 0 else print('Negative')
 
     def __mul__(self, other):
-        return Cell(self.x * other.x, self.y * other.y)
+        return Cell(int(self.x * other.x))
 
     def __truediv__(self, other):
-        return Cell(self.x / other.x, self.y / other.y)
+        return Cell(self.x / other.x)
 
-    def __str__(self) -> str:
-        return f"Клетка с параметрами ({self.x}, {self.y})"
+    def make_order(self, other, y):
+        result = '\n'.join(('*' * self.x)[i:i + y] for i in range(0, self.x, y))
+        return result
 
-    def make_order(self, other):
-        x = 12
-        nCell = 5
-        result = '\n'.join(('*' * x)[i:i + nCell] for i in range(0, x, nCell))
-        return Cell(result)
 
+c1 = Cell(12)
+c2 = Cell(3)
+print(f"cell 1: {c1}")
+print(f"cell 1: {c2}")
+print(f"sum:{c1 + c2}")
+print(f"minus:{c1 - c2}")
+print(f"multiply:{c1 * c2}")
+print(f"truediv: {c1 / c2}")
+
+z = c1.make_order(12, 5)
+print(f'организация по рядам \n{z}')
 
 
 
